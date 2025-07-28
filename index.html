@@ -1,0 +1,32 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="stylesheets/style.css">
+    <title>Random Number Game.</title>
+</head>
+
+<body>
+    <div id="box">
+    <div class="navbar">
+        <h1>Random Number Game</h1>
+    </div>
+    <div class="holder">
+        <input type="text" id="min">
+        <input type="text" id="max">
+        <button id="load">Load Game</button>
+        <input type="text" id="input" placeholder="Enter your choice here."class= "invisible">
+        <button id="btn" class= "invisible">match number</button>
+        <button onclick="location.reload()" class= "invisible">Replay</button>
+        <p class="messageBox invisible">Enter the number</p>
+        <p id="attempt"class= "invisible">Attempts left = 7 </p>
+        <p id="score" class= "invisible"></p>
+    </div>
+</div>
+
+</body>
+<script src="scripts/script.js"></script>
+</html>
