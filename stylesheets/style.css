@@ -46,7 +46,7 @@ p {
     padding: 0.5%;
     color: white;
     text-align: center;
-    width: 50%;
+    width: 60%;
 
 }
 .top {
@@ -203,6 +203,8 @@ button:active {
 }
 #attemptsDiv {
     text-align: center;
+    position: fixed;
+    top: 250px;
 }
 
 .holder {

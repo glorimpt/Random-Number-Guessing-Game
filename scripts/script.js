@@ -81,6 +81,7 @@ function play() {
         msg.innerText = `You lost, the number was ${randomNumber}`;
         msg.style.backgroundColor = "red";
         score.innerText = `You scored 0`;
+        
     }
 }
 
@@ -92,6 +93,7 @@ function loadGame() {
     btn.classList.remove("invisible");
     attempt.classList.remove("invisible");
     attempts.classList.remove("invisible");
+    document.querySelector("#message").classList.remove("invisible");
 
 
     loadBtn.classList.add("invisible");
@@ -99,12 +101,9 @@ function loadGame() {
     document.querySelector("#min").classList.add("invisible");
     document.querySelector(".navbar").classList.add("top");
     document.querySelector(".holder").classList.add("max");
-
-
 }
 
 document.querySelector("#box").style.height = window.innerHeight - 100 + "px";
-document.querySelector("#message").style.height = window.innerHeight - 150 + "px";
 
 function msgRed() {
     msg.classList.remove("invisible");
