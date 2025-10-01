@@ -20,23 +20,29 @@
         <button id="load"><p>Load Game</p></button>
         <input type="text" id="input" class= "invisible">
         <button id="btn" class= "invisible"><p>match number</p></button>
-        <button onclick="location.reload()" class= "invisible"><p>Replay</p></button>
        
         
         <p id="score" class= "invisible"></p>
     </div>
         
     <div id="message" class="invisible">
-        <p class="messageBox invisible">Start Playing By Entering Your Choice</p>
-
-         <div id="attemptsDiv">
-
-       
-                <h3 id="attempt"class= "invisible"></h3> 
+        <div id="attemptsDiv" class="invisible">
+        <h3 id="attempt"class= "invisible"></h3> 
         <p id="attempts"class= "invisible">Attempts left </p>
+
         </div>
+
+        <p class="messageBox invisible">Start Playing By Entering Your Choice</p>
+         
     </div>
-</div>
+
+</div>          
+<div id="result" class="invisible">
+    <p id="win">You Won!</p>
+    <p id="lose" class="invisible">Game Over</p>
+    <button onclick="location.reload()"><p>Replay</p></button>
+
+</div>  
 
 </body>
 <script src="scripts/script.js"></script>

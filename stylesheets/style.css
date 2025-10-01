@@ -16,28 +16,28 @@
     src: url('../assets/fonts/aldrich/Aldrich-Regular.ttf') format("truetype");
 }
 
-
 .invisible {
     display: none !important;
 }
+
 body {
     background-color: #1c1c1c;
 }
 
 p {
     color: white;
-    font-size: larger;
-    width: fit-content;
+    text-align: center;
 }
+
 #box {
  display: flex;
  width: 70%;
  background-color: rgba(0, 0, 0, 0);
  margin-left: 15%;
- height: 500px;
  overflow: hidden;
  margin-top: 50px;
 }
+
 .navbar {
     display: flex;
     justify-content: center;
@@ -65,6 +65,7 @@ h1{
     color: #00fff2;
     word-spacing: 5px;
 }
+
 input {
     padding: 0.5%;
     width:40%;
@@ -91,6 +92,7 @@ input:hover {
 }
 
 button {
+    width: fit-content;
     background-color: black;
     color: #fff;
     text-transform: capitalize;
@@ -100,9 +102,9 @@ button {
     display: block;
     cursor: pointer;
     transition: 0.3s;
-      position: relative;
-      border: none;
-      background: linear-gradient(
+    position: relative;
+    border: none;
+    background: linear-gradient(
     45deg,
     #ff0000,
     #ff7300,
@@ -113,13 +115,9 @@ button {
     #7a00ff,
     #ff00c8,
     #ff0000
-  );
-    backdrop-filter: blur(50px);
-    background-position-x: 200px;
-        background-position-y: 200px;
-    backdrop-filter: blur(50px);
-         animation: changeColor 10s ease-in-out infinite;
-         border: 1px solid #4f4f4f;
+    );
+    animation: changeColor 10s ease-in-out infinite;
+    border: 1px solid #4f4f4f;
 }
 button::before {
     height: 100%;
@@ -129,7 +127,7 @@ button::before {
     position: absolute;
     top: 0;
     left: 0; 
-    backdrop-filter: blur(10px);
+    backdrop-filter: blur(7px);
 }
 button p {
     font-size: 20px;
@@ -137,13 +135,13 @@ button p {
     padding: 3%;
     height: fit-content;
     width: fit-content;
-        z-index: 3234234;
+    z-index: 3234234;
     position: relative;
 }
  button:hover {
     background-position-x: 100px;
-        background-position-y: 100px;
-    padding: 0.3%;
+    background-position-y: 100px;
+    padding: 2px;
     font-weight: 550;
     border: none;
     box-shadow: 1px 1px 50px #ffffff3d;
@@ -177,7 +175,6 @@ button:active {
     transition: all 0.1s ease-in-out;
     transform: scale(1);
     box-shadow:  1px 1px 60px #00ffea;
-
 }
 
 .messageBox {
@@ -186,7 +183,7 @@ button:active {
     padding: 1%;
     border-radius: 5px;
     text-align: center;
-    border: 2px solid ;
+    border: 2px solid;
 }
 #attempt {
     color: white;
@@ -203,8 +200,7 @@ button:active {
 }
 #attemptsDiv {
     text-align: center;
-    position: fixed;
-    top: 250px;
+
 }
 
 .holder {
@@ -230,8 +226,61 @@ button:active {
     justify-content: center;
     align-items: center;
     background-color: black;
-    gap: 50px;
+    gap: 30px;
     width: 40%;
     overflow: hidden;
-    margin-top: 50px;
+    margin-top: 5%;
+}
+.win {
+    animation: win 0.1s linear 1;
+    animation-fill-mode: forwards;
+}
+
+
+#result {
+    position: absolute;
+    top: calc(10% - 100px);
+    left: calc(50% - 100px);
+    height: 250px;
+    width: 250px;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    flex-direction: column;
+    gap: 40px;
+    z-index: 1000;
+    background-color: black;
+    border-radius: 10px;
+    box-shadow: 5px 5px 15px black;
+}
+#result p {
+    font-size: 25px;
+}
+#lose {
+    animation: lose 0.5s linear 3;
+}
+/* #result button {
+    padding-right: px;
+}  */
+#result button p{
+    font-size: 20px;
+}
+@keyframes lose {
+    0% {
+        color: rgb(255, 255, 255);
+    }
+    50% {
+        color: rgb(255, 0, 0);
+    }
+    100% {
+        color: rgb(255, 255, 255);
+    }
+}
+@keyframes win {
+    0% {
+    top: calc(50%);
+    }
+    100% {
+    top: calc(50% - 100px);
+    }
 }

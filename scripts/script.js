@@ -22,7 +22,7 @@ function playGame() {
     }
     let difference = max -min;
     if (difference <= 5) {
-        attLeft =2;
+        attLeft = 2;
     }else if(difference <= 10) {
         attLeft = 3;
     }else if(difference <= 50) {
@@ -42,7 +42,7 @@ function playGame() {
 
 function play() {
     let userInput = parseInt(document.getElementById("input").value);
-    msg.innerText = randomNumber;
+     msg.innerText = randomNumber;
 
     if (isNaN(userInput)) {
         alert("Please enter a valid value - 'SARTHAK' .");
@@ -72,16 +72,71 @@ function play() {
     }
 
     function userWin() {
-        msg.innerText = `You won, the number was ${randomNumber}`;
-        msg.style.backgroundColor = "green";
         score.innerText = `You scored ${attLeft}`;
+    setTimeout(()=>{
+document.querySelector("#win").classList.remove("invisible");
+document.querySelector("#result").classList.remove("invisible");
+
+                document.querySelector("#result").classList.add("win");
+    },100)
+    
+            
+
+
+            // msg.innerText = `You won, the number was ${randomNumber}`;
+    msg.classList.add("invisible");
+
+        input.classList.add("invisible");
+    score.classList.remove("invisible");
+    btn.classList.add("invisible");
+    attempt.classList.add("invisible");
+    attempts.classList.add("invisible");
+    document.querySelector("#message").classList.add("invisible");
+
+
+    document.querySelector("#attemptsDiv").classList.add("invisible");
+
+
+
+    document.querySelector(".holder").classList.add("invisible");
+
+
     }
 
     function userLose() {
         msg.innerText = `You lost, the number was ${randomNumber}`;
         msg.style.backgroundColor = "red";
-        score.innerText = `You scored 0`;
-        
+        score.innerText = `You scored 0`; 
+
+        score.innerText = `You scored ${attLeft}`;
+    setTimeout(()=>{
+document.querySelector("#lose").classList.remove("invisible");
+document.querySelector("#result").classList.remove("invisible");
+
+                document.querySelector("#result").classList.add("win");
+    },100)
+    
+            
+
+
+            // msg.innerText = `You won, the number was ${randomNumber}`;
+    msg.classList.add("invisible");
+
+        input.classList.add("invisible");
+    score.classList.remove("invisible");
+    btn.classList.add("invisible");
+    attempt.classList.add("invisible");
+    attempts.classList.add("invisible");
+    document.querySelector("#message").classList.add("invisible");
+
+
+    document.querySelector("#attemptsDiv").classList.add("invisible");
+
+
+
+    document.querySelector("#attemptsDiv").classList.add("invisible");
+    document.querySelector(".holder").classList.add("invisible");
+
     }
 }
 
@@ -94,7 +149,10 @@ function loadGame() {
     attempt.classList.remove("invisible");
     attempts.classList.remove("invisible");
     document.querySelector("#message").classList.remove("invisible");
+    document.querySelector("#attemptsDiv").classList.remove("invisible");
 
+
+    document.querySelector("#win").classList.add("invisible");
 
     loadBtn.classList.add("invisible");
     document.querySelector("#max").classList.add("invisible");
