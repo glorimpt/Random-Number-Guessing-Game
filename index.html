@@ -18,22 +18,19 @@
     <div class="holder">
         <input type="text" id="min">
         <input type="text" id="max">
-        <button id="load"><p>Load Game</p></button>
+        <button id="loadBtn"><p>Load Game</p></button>
         <input type="text" id="input" class= "invisible">
-        <button id="btn" class= "invisible"><p>match number</p></button>
-       
-        
-        <p id="score" class= "invisible"></p>
+        <button id="btn" class= "invisible"><p>Match number</p></button>
     </div>
         
-    <div id="message" class="invisible">
+    <div id="statusBox" class="invisible">
         <div id="attemptsDiv" class="invisible">
         <h3 id="attempt"class= "invisible"></h3> 
         <p id="attempts"class= "invisible">Attempts left </p>
 
         </div>
 
-        <p class="messageBox invisible">Start Playing By Entering Your Choice</p>
+        <p class="messageBox invisible"></p>
          
     </div>
 
@@ -41,7 +38,7 @@
 <div id="result" class="invisible">
     <p id="win">You Won!</p>
     <p id="lose" class="invisible">Game Over</p>
-    <button onclick="location.reload()"><p>Replay </p></button>
+    <button onclick="replay()"><p>Replay </p></button>
 
 </div>  
 

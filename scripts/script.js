@@ -1,10 +1,23 @@
-const loadBtn = document.querySelector("#load");
+const loadBtn = document.querySelector("#loadBtn");
 const input = document.querySelector("#input");
-const msg = document.querySelector(".messageBox");
-const score = document.querySelector("#score");
+const messageBox = document.querySelector(".messageBox");
 const btn = document.querySelector("#btn");
 const attempt = document.querySelector("#attempt");
 const attempts = document.querySelector("#attempts");
+const navbar =  document.querySelector(".navbar");
+const holder = document.querySelector(".holder");
+const attemptsdiv = document.querySelector("#attemptsDiv");
+const result = document.querySelector("#result");
+const winMessage =  document.querySelector("#win");
+const statusBox = document.querySelector("#statusBox");
+
+
+
+
+
+
+
+
 
 
 let attLeft;
@@ -31,22 +44,16 @@ function playGame() {
         attLeft = 7;
     }
     
-    
-    
-    attempt.innerText = ` ${attLeft}`;
-
+    attempt.innerText = `${attLeft}`;
     randomNumber = Math.floor(Math.random() * (max - min) + min);
-
     loadGame();
 }
 
 function play() {
     let userInput = parseInt(document.getElementById("input").value);
-     msg.innerText = randomNumber;
-
     if (isNaN(userInput)) {
-        alert("Please enter a valid value - 'SARTHAK' .");
-        msg.innerText = "Enter a valid value.";
+        alert("Please enter a valid value.");
+        messageBox.innerText = "Enter a valid value.";
         msgRed();
         return;
     }
@@ -54,12 +61,12 @@ function play() {
     if (userInput !== randomNumber) {
         if (userInput > randomNumber) {
             msgBlue();
-            msg.innerText = "bigger number";
+            messageBox.innerText = "bigger number";
             attLeft = attLeft - 1;
             attempt.innerText = ` ${attLeft}`;
         } else if (userInput < randomNumber) {
             msgBlue();
-            msg.innerText = "smaller number";
+            messageBox.innerText = "smaller number";
             attLeft = attLeft - 1;
             attempt.innerText = ` ${attLeft}`;
         }
@@ -72,70 +79,54 @@ function play() {
     }
 
     function userWin() {
-        score.innerText = `You scored ${attLeft}`;
     setTimeout(()=>{
-document.querySelector("#win").classList.remove("invisible");
-document.querySelector("#result").classList.remove("invisible");
+winMessage.classList.remove("invisible");
+result.classList.remove("invisible");
 
-                document.querySelector("#result").classList.add("win");
-    },100)
+                result.classList.add("win");
+    },50)
     
-            
-
-
-            // msg.innerText = `You won, the number was ${randomNumber}`;
-    msg.classList.add("invisible");
+    messageBox.classList.add("invisible");
 
         input.classList.add("invisible");
-    score.classList.remove("invisible");
     btn.classList.add("invisible");
     attempt.classList.add("invisible");
     attempts.classList.add("invisible");
-    document.querySelector("#message").classList.add("invisible");
+statusBox.classList.add("invisible");
 
 
-    document.querySelector("#attemptsDiv").classList.add("invisible");
+    attemptsdiv.classList.add("invisible");
 
 
-
-    document.querySelector(".holder").classList.add("invisible");
+    holder.classList.add("invisible");
 
 
     }
 
     function userLose() {
-        msg.innerText = `You lost, the number was ${randomNumber}`;
-        msg.style.backgroundColor = "red";
-        score.innerText = `You scored 0`; 
-
-        score.innerText = `You scored ${attLeft}`;
     setTimeout(()=>{
 document.querySelector("#lose").classList.remove("invisible");
-document.querySelector("#result").classList.remove("invisible");
+result.classList.remove("invisible");
 
-                document.querySelector("#result").classList.add("win");
-    },100)
+               result.classList.add("win");
+    },50)
     
-            
 
-
-            // msg.innerText = `You won, the number was ${randomNumber}`;
-    msg.classList.add("invisible");
+    messageBox.classList.add("invisible");
 
         input.classList.add("invisible");
-    score.classList.remove("invisible");
     btn.classList.add("invisible");
     attempt.classList.add("invisible");
     attempts.classList.add("invisible");
-    document.querySelector("#message").classList.add("invisible");
+statusBox.classList.add("invisible");
 
 
-    document.querySelector("#attemptsDiv").classList.add("invisible");
+    attemptsdiv.classList.add("invisible");
 
 
 
-    document.querySelector("#attemptsDiv").classList.add("invisible");
-    document.querySelector(".holder").classList.add("invisible");
+    attemptsdiv.classList.add("invisible");
+    holder.classList.add("invisible");
 
     }
 }
@@ -144,32 +135,52 @@ btn.addEventListener('click', play);
 
 function loadGame() {
     input.classList.remove("invisible");
-    score.classList.remove("invisible");
     btn.classList.remove("invisible");
     attempt.classList.remove("invisible");
     attempts.classList.remove("invisible");
-    document.querySelector("#message").classList.remove("invisible");
-    document.querySelector("#attemptsDiv").classList.remove("invisible");
+statusBox.classList.remove("invisible");
+    attemptsdiv.classList.remove("invisible");
 
 
-    document.querySelector("#win").classList.add("invisible");
+   winMessage.classList.add("invisible");
 
     loadBtn.classList.add("invisible");
     document.querySelector("#max").classList.add("invisible");
     document.querySelector("#min").classList.add("invisible");
-    document.querySelector(".navbar").classList.add("top");
-    document.querySelector(".holder").classList.add("max");
+    navbar.classList.add("top");
+    holder.classList.add("max");
 }
 
 document.querySelector("#box").style.height = window.innerHeight - 100 + "px";
 
 function msgRed() {
-    msg.classList.remove("invisible");
-    msg.style.borderColor = "red";
+    messageBox.classList.remove("invisible");
+    messageBox.style.borderColor = "red";
 }
 function msgBlue() {
-    msg.classList.remove("invisible");
-    msg.style.borderColor = "blue";
-    msg.style.backgroundColor = "#0011ff41";
+    messageBox.classList.remove("invisible");
+    messageBox.style.borderColor = "blue";
+    messageBox.style.backgroundColor = "#0011ff41";
 
+}
+function replay() {
+
+        input.classList.add("invisible");
+    btn.classList.add("invisible");
+    attempt.classList.add("invisible");
+    attempts.classList.add("invisible");
+statusBox.classList.add("invisible");
+    attemptsdiv.classList.add("invisible");
+
+
+   winMessage.classList.remove("invisible");
+
+    loadBtn.classList.remove("invisible");
+    document.querySelector("#max").classList.remove("invisible");
+    document.querySelector("#min").classList.remove("invisible");
+    navbar.classList.remove("top");
+    holder.classList.remove("max");
+    holder.classList.remove("invisible");
+
+    result.classList.add("invisible");
 }

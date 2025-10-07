@@ -141,12 +141,11 @@ button p {
  button:hover {
     background-position-x: 100px;
     background-position-y: 100px;
-    padding: 2px 2px 2px 2px;
+    padding: 2px;
     font-weight: 550;
     border: none;
     box-shadow: 1px 1px 50px #ffffff3d;
     transition: all 0.2s ease-in-out;
-
 } 
 @keyframes changeColor {
     0% {
@@ -172,9 +171,8 @@ button p {
 }
 
 button:active {
+    padding: 5px;
     transition: all 0.1s ease-in-out;
-    transform: scale(1);
-    box-shadow:  1px 1px 60px #00ffea;
 }
 
 .messageBox {
@@ -219,7 +217,7 @@ button:active {
     margin-left: 10%;
 }
 
-#message {
+#statusBox{
     display: flex;
     flex-direction: column;
     padding: 1%;
@@ -256,9 +254,7 @@ button:active {
 #result p {
     font-size: 25px;
 }
-#lose {
-    animation: lose 0.5s linear 3;
-}
+
  #result button {
     box-sizing: border-box;
     text-align: center;
@@ -271,17 +267,7 @@ button:active {
 padding: 10%;
 text-align: center;
 }
-@keyframes lose {
-    0% {
-        color: rgb(255, 255, 255);
-    }
-    50% {
-        color: rgb(255, 0, 0);
-    }
-    100% {
-        color: rgb(255, 255, 255);
-    }
-}
+
 @keyframes win {
     0% {
     top: calc(50%);
@@ -348,7 +334,7 @@ button {
     top: 15%;
     left: 1%;
 }
-#message {
+#statusBox {
 
     padding: 5%;
 width: 90%;
@@ -362,4 +348,11 @@ width: 90%;
 margin: 0%;
 left: 0%;
 }
+
+button:active {
+    padding: 0px;
+    transition: all 0.1s ease-in-out;
+    box-shadow: 1px 1px 50px #ffffff3d;
+}
+
 }
