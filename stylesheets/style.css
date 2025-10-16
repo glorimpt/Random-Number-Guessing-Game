@@ -33,7 +33,7 @@ p {
  display: flex;
  width: 70%;
  background-color: rgba(0, 0, 0, 0);
- margin-left: 15%;
+ margin-left: 12.5%;
  overflow: hidden;
  margin-top: 50px;
 }
@@ -353,6 +353,10 @@ button:active {
     padding: 0px;
     transition: all 0.1s ease-in-out;
     box-shadow: 1px 1px 50px #ffffff3d;
+}
+#result {
+    position: absolute;
+    left: calc(50% -  125px);
 }
 
 }

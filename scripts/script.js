@@ -28,21 +28,10 @@ loadBtn.addEventListener("click", playGame);
 function playGame() {
     let min = parseInt(document.querySelector("#min").value);
     let max = parseInt(document.querySelector("#max").value);
+    let diff = max-min;
 
-    if (isNaN(min) || isNaN(max) || max <= min) {
-        alert("Please enter valid min and max values (max > min).");
-        return;
-    }
-    let difference = max -min;
-    if (difference <= 5) {
-        attLeft = 2;
-    }else if(difference <= 10) {
-        attLeft = 3;
-    }else if(difference <= 50) {
-        attLeft = 5;
-    }else if(difference <= 100) {
-        attLeft = 7;
-    }
+    // THE GREATEST ALGORITHM
+    attLeft = Math.ceil(Math.log2(diff));
     
     attempt.innerText = `${attLeft}`;
     randomNumber = Math.floor(Math.random() * (max - min) + min);
